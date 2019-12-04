@@ -24,10 +24,9 @@ def reduce(source_array, starting_value = nil)
   
   
   while i < source_array.length do 
-    value += source_array[i]
-    yield()
+    value = yield(value, source_array[i])
+    
     i += 1
   end
-  #yield(value)
   value
 end
